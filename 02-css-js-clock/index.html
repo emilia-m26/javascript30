@@ -89,6 +89,14 @@
         }
 
         setInterval(setDate, 1000)
+
+        let date = new Date();
+        let month = date.getMonth();
+        let day = date.getDate();
+
+        if (month === 11 && day === 25) {
+            console.log('Mele Kalikimaka!');
+        }
     </script>
 </body>
 
