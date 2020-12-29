@@ -87,14 +87,23 @@
             justify-content: center;
             align-items: center;
         }
-        /*putting top and bottom words off screen*/
+        /*putting top words off screen and when open-active will show*/
         
         .panel>*:first-child {
             transform: translateY(-100%);
         }
         
+        .panel.open-active>*:first-child {
+            transform: translateY(0);
+        }
+        /*putting bottom words off screen and when open-active will show*/
+        
         .panel>*:last-child {
             transform: translateY(100%);
+        }
+        
+        .panel.open-active>*:last-child {
+            transform: translateY(0);
         }
         
         .panel p {
