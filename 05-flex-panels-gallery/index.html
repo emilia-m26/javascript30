@@ -51,6 +51,8 @@
             justify-content: center;
             align-items: center;
             display: flex;
+            /*stacks words inside of image*/
+            flex-direction: column;
         }
         
         .panel1 {
@@ -79,6 +81,8 @@
             width: 100%;
             transition: transform 0.5s;
             border: 1px solid red;
+            /*each word takes up 1/3 of space*/
+            flex: 1 0 auto;
         }
         
         .panel p {
