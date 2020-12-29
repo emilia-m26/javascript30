@@ -87,6 +87,15 @@
             justify-content: center;
             align-items: center;
         }
+        /*putting top and bottom words off screen*/
+        
+        .panel>*:first-child {
+            transform: translateY(-100%);
+        }
+        
+        .panel>*:last-child {
+            transform: translateY(100%);
+        }
         
         .panel p {
             text-transform: uppercase;
