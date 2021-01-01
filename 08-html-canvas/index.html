@@ -30,9 +30,13 @@
         //draw function to be called whenever move mouse on canvas
         function draw(event) {
             console.log(event);
+            if (!isDrawing) return; //will stop fn from running when not mouse down
         }
 
         canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mousedown', () => isDrawing = true);
+        canvas.addEventListener('mouseup', () => isDrawing = false);
+        canvas.addEventListener('mouseout', () => isDrawing = false);
     </script>
 
     <style>
