@@ -32,6 +32,7 @@
         function draw(event) {
             if (!isDrawing) return; //will stop fn from running when not mouse down
             console.log(event);
+            ctx.strokeStyle = `hsl(182, 93%, 50%)`;
             ctx.beginPath();
             //start from
             ctx.moveTo(lastX, lastY);
