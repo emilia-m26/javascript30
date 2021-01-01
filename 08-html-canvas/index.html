@@ -14,6 +14,25 @@
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+
+        //base settings
+        ctx.strokeStyle = '#BADASS';
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+
+        //creating flag set to false - when you click down will be true, let go of button be false to show when to draw
+        let isDrawing = false;
+
+        //where you start line from
+        let lastX = 0;
+        let lastY = 0;
+
+        //draw function to be called whenever move mouse on canvas
+        function draw(event) {
+            console.log(event);
+        }
+
+        canvas.addEventListener('mousemove', draw);
     </script>
 
     <style>
