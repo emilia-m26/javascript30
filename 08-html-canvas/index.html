@@ -19,6 +19,7 @@
         ctx.strokeStyle = '#BADASS';
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
+        ctx.lineWidth = 15;
 
         //creating flag set to false - when you click down will be true, let go of button be false to show when to draw
         let isDrawing = false;
@@ -29,12 +30,25 @@
 
         //draw function to be called whenever move mouse on canvas
         function draw(event) {
-            console.log(event);
             if (!isDrawing) return; //will stop fn from running when not mouse down
+            console.log(event);
+            ctx.beginPath();
+            //start from
+            ctx.moveTo(lastX, lastY);
+            //go to
+            ctx.lineTo(event.offsetX, event.offsetY);
+            ctx.stroke();
+            lastX = event.offsetX;
+            lastY = event.offsetY;
         }
 
+        canvas.addEventListener('mousedown', (event) => {
+            isDrawing = true;
+            lastX = event.offsetX;
+            lastY = event.offsetY;
+        });
+
         canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('mousedown', () => isDrawing = true);
         canvas.addEventListener('mouseup', () => isDrawing = false);
         canvas.addEventListener('mouseout', () => isDrawing = false);
     </script>
