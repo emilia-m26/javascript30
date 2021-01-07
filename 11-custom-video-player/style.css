@@ -14,7 +14,7 @@ body {
     display: flex;
     background: #7A419B;
     min-height: 100vh;
-    background: linear-gradient(135deg, #2545EE 0%, #921099 55%, #7c1599 100%);
+    background: linear-gradient(135deg, #2545EE 0%, #0D3781 55%, #04132D 100%);
     background-size: cover;
     align-items: center;
     justify-content: center;
