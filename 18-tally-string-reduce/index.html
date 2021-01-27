@@ -187,9 +187,13 @@
         const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
         //console.log(timeNodes);
         const seconds = timeNodes
-            .map(node => node.dataset.time)
-
-        console.log(seconds)
+            .map(node => node.dataset.time) //gets full time
+            .map(timeCode => {
+                //destructure to assign numbers to mins and secs and parseFloat to change to number
+                const [mins, secs] = timeCode.split(':').map(parseFloat);
+                console.log(mins, secs);
+                return (mins * 60) + secs;
+            })
     </script>
 </body>
 
