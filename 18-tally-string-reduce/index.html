@@ -191,9 +191,20 @@
             .map(timeCode => {
                 //destructure to assign numbers to mins and secs and parseFloat to change to number
                 const [mins, secs] = timeCode.split(':').map(parseFloat);
-                console.log(mins, secs);
+                //console.log(mins, secs);
                 return (mins * 60) + secs;
             })
+            .reduce((total, vidSeconds) => {
+                return total + vidSeconds
+            })
+
+        let secondsLeft = seconds;
+        const hours = Math.floor(secondsLeft / 3600);
+        secondsLeft = secondsLeft % 3600; //returns remainder after hours
+        const mins = Math.floor(secondsLeft / 60);
+        secondsLeft = secondsLeft % 60;
+
+        console.log(hours, mins, secondsLeft);
     </script>
 </body>
 
