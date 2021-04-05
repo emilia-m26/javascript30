@@ -17,6 +17,12 @@
         const recognition = new SpeechRecognition();
         // will populate while you are speaking, if not it will wait til you are done speaking
         recognition.interimResults = true;
+
+        let p = document.createElement('p');
+
+        const words = document.querySelector('.words');
+
+        words.appendChild(p);
     </script>
 
 
