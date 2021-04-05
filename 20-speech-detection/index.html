@@ -25,7 +25,11 @@
         words.appendChild(p);
 
         recognition.addEventListener('result', event => {
-            console.log(event);
+            console.log(event.results);
+            //converting to array
+            const transcript = Array.from(event.results).map(result => result[0]).map(result => result.transcript).join('');
+
+            console.log(transcript)
         });
 
         recognition.start();
