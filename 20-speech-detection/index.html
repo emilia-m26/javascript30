@@ -23,6 +23,12 @@
         const words = document.querySelector('.words');
 
         words.appendChild(p);
+
+        recognition.addEventListener('result', event => {
+            console.log(event);
+        });
+
+        recognition.start();
     </script>
 
 
