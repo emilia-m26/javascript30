@@ -13,6 +13,10 @@
 
     <script>
         window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        const recognition = new SpeechRecognition();
+        // will populate while you are speaking, if not it will wait til you are done speaking
+        recognition.interimResults = true;
     </script>
 
 
