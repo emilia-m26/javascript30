@@ -25,12 +25,15 @@
         words.appendChild(p);
 
         recognition.addEventListener('result', event => {
-            console.log(event.results);
+            //console.log(event.results);
             //converting to array
             const transcript = Array.from(event.results).map(result => result[0]).map(result => result.transcript).join('');
 
             console.log(transcript)
         });
+
+        //adding second event listener end, so when it ends, we call start again so it continues
+        recognition.addEventListener('end', recognition.start);
 
         recognition.start();
     </script>
