@@ -29,7 +29,16 @@
             //converting to array
             const transcript = Array.from(event.results).map(result => result[0]).map(result => result.transcript).join('');
 
-            console.log(transcript)
+            //to add to DOM
+            p.textContent = transcript;
+            //this is to add to DOM and not replace exisiting/previous p 
+            if (event.results[0].isFinal) {
+                p = document.createElement('p');
+                words.appendChild(p);
+            }
+            console.log(transcript);
+
+
         });
 
         //adding second event listener end, so when it ends, we call start again so it continues
