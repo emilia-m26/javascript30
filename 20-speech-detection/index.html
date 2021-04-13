@@ -36,7 +36,15 @@
                 p = document.createElement('p');
                 words.appendChild(p);
             }
-            console.log(transcript);
+
+            // if (transcript.includes('Common Kings') && event.results[0].isFinal) {
+            //     window.open("https://www.commonkings.com");
+            // }
+
+            if (transcript.includes('JavaScript') && event.results[0].isFinal) {
+                window.open("https://exercism.io/tracks/javascript");
+            }
+
 
 
         });
