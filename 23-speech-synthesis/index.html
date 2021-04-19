@@ -50,7 +50,12 @@
             voicesDropdown.innerHTML = voiceOptions;
         }
 
+        function setVoice() {
+            console.log('Changing Voice');
+        }
+
         speechSynthesis.addEventListener('voiceschanged', populateVoices);
+        voicesDropdown.addEventListener('change', setVoice);
     </script>
 
 </body>
