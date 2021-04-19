@@ -51,7 +51,8 @@
         }
 
         function setVoice() {
-            console.log('Changing Voice');
+            //console.log('Changing Voice');
+            msg.voice = voices.find(voice => voice.name === this.value);
         }
 
         speechSynthesis.addEventListener('voiceschanged', populateVoices);
