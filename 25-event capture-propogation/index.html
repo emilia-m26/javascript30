@@ -46,6 +46,19 @@
 
     <button></button>
     <script>
+        const divs = document.querySelectorAll('div');
+
+        function logText(event) {
+            //will do bubbling unless you stop propagation
+            console.log(this.classList.value);
+            //stop propagation, stop bubbling
+            event.stopPropagation();
+        }
+
+        divs.forEach(div => div.addEventListener('click', logText, {
+            capture: false
+                //run function on the way down than up when true
+        }));
     </script>
 </body>
 
