@@ -52,12 +52,13 @@
             //will do bubbling unless you stop propagation
             console.log(this.classList.value);
             //stop propagation, stop bubbling
-            event.stopPropagation();
+            //event.stopPropagation();
         }
 
         divs.forEach(div => div.addEventListener('click', logText, {
-            capture: false
-                //run function on the way down than up when true
+            capture: false,
+            //run function on the way down than up when true
+            once: true //unbinds after one click
         }));
     </script>
 </body>
